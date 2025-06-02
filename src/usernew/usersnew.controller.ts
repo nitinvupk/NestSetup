@@ -10,6 +10,8 @@ export class UsersNewController {
 
     @Get()
     findAll(@Query('role') role ? : 'Intern' | 'Engineer'){
+        console.log('findAll',role)
+
         return []
     }
 
@@ -20,21 +22,27 @@ export class UsersNewController {
 
     @Get('interns')
     findAllInterns(){
+        console.log('findAll')
+
         return []
     }
 
     @Post()
     create(@Body() user: {}){
+        console.log('created',user)
         return user
     }
 
     @Patch(':id')
     update(@Param('id') id : string, @Body() userUpdate: {}){
+        console.log('updated',userUpdate)
+
         return { id, ...userUpdate}
     }
 
     @Delete (':id')
     delete(@Param('id') id : string){
+        console.log('deleted',id)
         return {id}
     }
 
