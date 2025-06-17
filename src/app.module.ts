@@ -12,14 +12,16 @@ import { UsersModule } from './users/users.module';
 import { StudentModule } from './student/student.module';
 import { ConfigModule } from '@nestjs/config';
 // import { StudentController } from './student/student.controller';
+import { LoginModule } from './login/login.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),   
-     MongooseModule.forRoot(process.env.MONGO_URI!),
+    // ConfigModule.forRoot({ isGlobal: true }),   
+    //  MongooseModule.forRoot(process.env.MONGO_URI!),
     // MongooseModule.forRoot('mongodb://localhost:27017/NestData'),
         // UsersModule,
     StudentModule,
+    LoginModule,
   ], 
    controllers: [AppController, UsersController,UsersNewController,RoleController],
   providers: [AppService, BlogsService],
