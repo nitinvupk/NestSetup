@@ -7,11 +7,15 @@ export class LoginController {
 
   @Post('register')
   register(@Body() dto: any) {
+    console.log('login',this.register)
+
     return this.loginService.register(dto);
   }
 
   @Post('login')
   login(@Body() dto: any) {
+    console.log('login',this.login)
+
     return this.loginService.login(dto);
   }
 
